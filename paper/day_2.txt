@@ -1,0 +1,31 @@
+5G NR Glossary of Key Terms
+
+1. PRB (Physical Resource Block)
+A PRB is the smallest unit of resource allocation in 5G NR. It consists of 12 consecutive subcarriers in the frequency domain over one slot in the time domain. PRBs are used by the scheduler to assign bandwidth to UEs.
+
+2. SINR (Signal to Interference plus Noise Ratio)
+SINR measures the quality of a wireless signal compared to interference and noise. Higher SINR indicates better link quality and allows higher data rates.
+
+3. UE (User Equipment)
+UE refers to any device used by the end user to connect to the network, such as smartphones, IoT devices, or modems.
+
+4. QoS (Quality of Service)
+QoS defines the performance level of a service, including parameters like latency, throughput, reliability, and priority. It ensures different applications get appropriate network resources.
+
+5. CQI (Channel Quality Indicator)
+CQI is a feedback value sent by the UE to the base station indicating the quality of the downlink channel. It helps the scheduler choose an appropriate MCS level.
+
+6. HARQ (Hybrid Automatic Repeat Request)
+HARQ is an error correction mechanism combining forward error correction and retransmission. If a packet is not decoded correctly, retransmission is triggered.
+
+7. TDD (Time Division Duplex)
+TDD is a duplexing technique where uplink and downlink transmissions share the same frequency band but are separated in time slots.
+
+8. MCS (Modulation and Coding Scheme)
+MCS defines the modulation type (QPSK, QAM, etc.) and coding rate used for transmission. It determines data rate and robustness.
+
+9. Scheduling Grant
+A scheduling grant is a message from the base station to the UE that assigns radio resources (time and frequency) for uplink or downlink transmission.
+
+10. Numerology
+Numerology in 5G NR defines subcarrier spacing, symbol duration, and slot structure. Different numerologies allow flexibility for different use cases like low latency or high throughput.
