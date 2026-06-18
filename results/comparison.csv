@@ -1,4 +1,5 @@
 Scheduler,Mean Throughput,Throughput Std,Mean Latency,Latency Std,Mean Fairness,Fairness Std,Remarks
 Round Robin (RR),243.62,67.21,468.19,295.11,0.7718,0.1093,Balanced fairness with moderate throughput
-Proportional Fair (PF),110.02,65.25,190.24,140.25,0.7161,0.1862,Lower latency but reduced throughput
-Deep Q-Network (DQN),17510.00,7328.70,57170.00,19389.20,0.2000,0.0000,Very high throughput but poor fairness
+Proportional Fair (PF),110.02,65.25,190.24,140.25,0.7161,0.1862,Lowest latency among baseline schedulers
+Deep Q-Network (DQN),17510.00,7328.70,57170.00,19389.20,0.2000,0.0000,Maximized throughput but fairness collapsed
+Proximal Policy Optimization (PPO),15680.00,7780.59,42180.00,26465.97,0.2000,0.0000,High throughput with lower latency than DQN but poor fairness
