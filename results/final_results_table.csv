@@ -1,0 +1,8 @@
+Method	Throughput	Latency	Fairness
+Round Robin	251.73	509.25	0.7905
+Proportional Fair	112.5	215.22	0.7239
+PPO	16930	47610	0.2
+DQN (30 UE)	17910	64490	0.0333
+DQN No Replay	16090	38480	0.0667
+DQN No Target	15960	41330	0.0667
+DQN Simple Reward	17700	52160	0.0667
