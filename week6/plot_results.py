@@ -2,8 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load evaluation results
-dqn = pd.read_csv("results/dqn_evaluation_results.csv")
-pf = pd.read_csv("results/pf_evaluation_results.csv")
+dqn = pd.read_csv("results/dqn_full_30ue_evaluation_results.csv")
+pf = pd.read_csv("results/pf_30ue_evaluation_results.csv")
+
 
 # -------------------------------
 # Bar Chart (Mean Comparison)

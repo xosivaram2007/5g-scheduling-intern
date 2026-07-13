@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load results
-df = pd.read_csv("results/final_results_table.csv")
+df = pd.read_csv("results/final_results_table_30ue.csv")
 
 # Keep only the main algorithms
 methods = [

@@ -1,5 +1,5 @@
-Configuration,Throughput,Latency,Fairness,Observation
-Full DQN,16630.00,67140.00,0.0667,Baseline configuration
-No Replay Buffer,16630.00,45490.00,0.0667,Minimal impact on throughput
-No Target Network,16600.00,38470.00,0.0667,Similar performance to baseline
-Simplified Reward,16850.00,58240.00,0.0667,Reward simplification had limited impact
+Configuration,Throughput,Latency,Fairness
+DQN (30 UE),17910.00,64490.00,0.0333
+DQN No Replay,16090.00,38480.00,0.0667
+DQN No Target,15960.00,41330.00,0.0667
+DQN Simple Reward,17700.00,52160.00,0.0667

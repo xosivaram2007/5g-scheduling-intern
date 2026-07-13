@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load results
-dqn = pd.read_csv("results/dqn_evaluation_results.csv")
-pf = pd.read_csv("results/pf_evaluation_results.csv")
+dqn = pd.read_csv("results/dqn_full_30ue_evaluation_results.csv")
+pf = pd.read_csv("results/pf_30ue_evaluation_results.csv")
 
 # Sort latency values
 dqn_latency = np.sort(dqn["Latency"])
