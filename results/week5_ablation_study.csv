@@ -1,5 +1,5 @@
-Configuration,Throughput,Latency,Fairness
-DQN (30 UE),17910.00,64490.00,0.0333
-DQN No Replay,16090.00,38480.00,0.0667
-DQN No Target,15960.00,41330.00,0.0667
-DQN Simple Reward,17700.00,52160.00,0.0667
+Variant,Throughput Mean,Throughput Std,Latency Mean,Latency Std,Fairness Mean,Fairness Std
+Full DQN,16650,7783.80,62250,21363.23,0.0333,0.0000
+No Replay Buffer,16310,8004.62,41250,28155.06,0.0333,0.0000
+No Target Network,17670,7788.52,47640,26109.97,0.0333,0.0000
+Simplified Reward,18050,7787.65,63130,17700.65,0.0333,0.0000
