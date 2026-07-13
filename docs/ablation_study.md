@@ -2,26 +2,26 @@
 
 ## Overview
 
-To understand the contribution of individual Deep Q-Network (DQN) components, an ablation study was conducted by systematically removing key architectural elements and comparing performance against the full DQN implementation.
+To evaluate the contribution of key Deep Q-Network (DQN) components, an ablation study was performed by systematically removing or modifying individual architectural elements while keeping the remaining training setup unchanged. The objective was to quantify the impact of each component on scheduling performance in the proposed 5G resource allocation framework.
 
-The following variants were evaluated:
+The following DQN variants were evaluated:
 
-- 🔄 DQN without Replay Buffer
-- 🎯 DQN without Target Network
-- 📝 DQN with Simplified Reward Function
+- 🔄 **DQN without Replay Buffer**
+- 🎯 **DQN without Target Network**
+- 📝 **DQN with Simplified Reward Function**
 
-All experiments were evaluated using the same 30 UE scheduling environment.
+All experiments were conducted using the same **30 User Equipment (UE)** scheduling environment to ensure a fair comparison.
 
 ---
 
-## 📊 Performance Comparison
+# 📊 Performance Comparison
 
 | Model | Throughput | Latency | Fairness |
-|---------|-----------:|---------:|---------:|
+|----------------------|-----------:|-----------:|---------:|
 | **DQN (Full Model)** | **17520.00** | **61230.00** | **0.0333** |
-| DQN No Replay | 16070.00 | 39830.00 | 0.0333 |
-| DQN No Target | 14390.00 | 54400.00 | 0.0333 |
-| DQN Simple Reward | 17610.00 | 63190.00 | 0.0333 |
+| DQN No Replay Buffer | 16070.00 | 39830.00 | 0.0333 |
+| DQN No Target Network | 14390.00 | 54400.00 | 0.0333 |
+| DQN Simplified Reward | **17610.00** | 63190.00 | 0.0333 |
 
 ---
 
@@ -36,7 +36,7 @@ All experiments were evaluated using the same 30 UE scheduling environment.
 
 ## Impact
 
-Throughput Gain:
+Throughput Improvement:
 
 ```text
 ((17520 - 16070) / 16070) × 100
@@ -45,9 +45,9 @@ Throughput Gain:
 
 ## Findings
 
-The replay buffer improves learning by allowing the agent to reuse past experiences during training, reducing correlation between consecutive samples and improving convergence.
+Experience replay enables the agent to learn from a diverse collection of past transitions rather than relying solely on consecutive experiences.
 
-Removing the replay buffer reduced throughput by approximately **9.02%**, demonstrating that experience replay contributes significantly to learning efficiency in the scheduling environment.
+Removing the replay buffer reduced throughput by approximately **9.02%**, indicating that replay memory plays an important role in improving learning efficiency and convergence stability.
 
 ---
 
@@ -69,9 +69,9 @@ Removing the replay buffer reduced throughput by approximately **9.02%**, demons
 
 ## Findings
 
-The target network stabilizes Q-value updates by providing a slowly changing target during training.
+The target network stabilizes Q-value estimation by periodically updating the target used during Bellman learning.
 
-Removing the target network resulted in a throughput reduction of approximately **21.75%**, making it the most influential DQN component evaluated in this study. This highlights the importance of stable target estimation for effective reinforcement learning.
+Removing the target network caused the largest degradation in throughput, reducing performance by approximately **21.75%**. This confirms that the target network is the most influential architectural component in the proposed DQN scheduler.
 
 ---
 
@@ -93,9 +93,9 @@ Removing the target network resulted in a throughput reduction of approximately 
 
 ## Findings
 
-The simplified reward function achieved nearly identical performance to the original reward formulation, with a marginal throughput increase of approximately **0.51%**.
+The simplified reward function achieved performance very close to the original reward formulation, producing a marginal throughput increase of approximately **0.51%**.
 
-This indicates that the current scheduling environment is primarily driven by throughput optimization, and additional reward shaping has only a limited impact on overall performance.
+Since the difference is extremely small, the results suggest that the scheduling policy is primarily influenced by the learning architecture rather than the specific reward shaping used in this environment.
 
 ---
 
@@ -105,28 +105,32 @@ This indicates that the current scheduling environment is primarily driven by th
 |------------|-----------------------:|
 | Replay Buffer | +9.02% |
 | Target Network | +21.75% |
-| Reward Shaping | ~0.51% (negligible difference) |
-
-## Conclusions
-
-✅ Replay Buffer significantly improves learning efficiency.
-
-✅ Target Network is the most critical component for stable and effective DQN training.
-
-✅ Simplifying the reward function has minimal impact on throughput under the current environment.
-
-✅ The Target Network and Replay Buffer remain the primary contributors to DQN performance in the proposed scheduler.
+| Reward Function | ~0.51% (negligible difference) |
 
 ---
 
-## Future Work
+# Conclusions
 
-The current environment uses a simplified traffic model. Future enhancements may include:
+✅ Replay Buffer significantly improves learning efficiency by enabling experience reuse.
 
-- Dynamic packet arrivals
-- Variable traffic loads
-- Multi-resource scheduling
+✅ Target Network is the most critical DQN component for maintaining stable and effective learning.
+
+✅ Simplifying the reward function produces nearly identical performance under the current simulation setup.
+
+✅ The experimental results demonstrate that architectural components (Replay Buffer and Target Network) have a substantially greater impact on scheduler performance than reward shaping.
+
+---
+
+# Future Work
+
+Although the proposed scheduler demonstrates strong throughput performance, several improvements can further enhance its applicability to practical 5G and beyond networks:
+
+- Dynamic packet arrival models
+- Variable traffic load scenarios
+- Adaptive QoS-aware scheduling
 - Fairness-aware reward engineering
+- Multi-resource block allocation
 - Multi-objective reinforcement learning
+- Evaluation under realistic wireless channel conditions
 
-These additions would enable a more realistic evaluation of intelligent scheduling strategies for next-generation 5G and beyond wireless networks.
+These extensions will enable a more comprehensive assessment of reinforcement learning-based scheduling for next-generation cellular networks.
