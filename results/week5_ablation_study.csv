@@ -1,5 +1,5 @@
 Variant,Throughput Mean,Throughput Std,Latency Mean,Latency Std,Fairness Mean,Fairness Std
-Full DQN,16650,7783.80,62250,21363.23,0.0333,0.0000
+DQN (Ours),16820,7992.97,59630,22002.12,0.0333,0.0000
 No Replay Buffer,16310,8004.62,41250,28155.06,0.0333,0.0000
 No Target Network,17670,7788.52,47640,26109.97,0.0333,0.0000
 Simplified Reward,18050,7787.65,63130,17700.65,0.0333,0.0000
